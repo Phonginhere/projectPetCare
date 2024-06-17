@@ -4,7 +4,7 @@ This is the updated version for 2023 (originally we made it between July and Aug
 @tuankun-279, @KiwiLifeIsGood, @LeQuangKien, Nhi Bui (You can find them at GitHub, "@" means that they have their account)
 # project-pet-care-android-app
 java, firebase
-# APK file
+# APK file (best to work with android 11)
 <a href="https://github.com/Phonginhere/list-apk/blob/main/project-pet-care.apk">Here!</a>
 # Video 
 <a href="https://drive.google.com/drive/u/1/folders/1j95O66maOo2o2Fb5IRHz-FJzTxMXYM56">Here!</a>
