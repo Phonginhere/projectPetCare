@@ -14,7 +14,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="32dp"
-        android:hint="Pet Name"
+        android:hint="Pet Name!"
         app:helperText=""
         app:helperTextTextColor="@color/red"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,7 +26,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/petName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="46dp"
             android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -51,7 +51,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/petKind"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -76,7 +76,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/petSpecies"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -101,7 +101,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/petGender"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="47dp"
             android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -126,7 +126,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/petBirth"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="45dp"
             android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -151,7 +151,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/petHeight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -176,7 +176,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/petWeight"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="38dp"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -200,7 +200,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/petColor"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="42dp"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -224,7 +224,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/petIntact"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="43dp"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -248,20 +248,20 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/petNote"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="37dp"
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnPetAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="351dp"
+        android:layout_height="40dp"
         android:layout_marginBottom="8dp"
         android:text="SAVE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.466"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.642" />
 </androidx.constraintlayout.widget.ConstraintLayout>

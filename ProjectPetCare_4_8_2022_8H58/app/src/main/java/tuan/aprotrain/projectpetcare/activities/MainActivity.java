@@ -547,22 +547,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        if (snapshot.getValue(User.class).getUserId().equals(currentUser.getUid())){
-                            if (snapshot.child("userUrl").getValue() == null || snapshot.child("userUrl").getValue().equals("")) {
-                                Glide.with(getApplicationContext()).load(R.mipmap.ic_launcher_round).apply(new RequestOptions()
-                                        .override(170, 170)).into(imgProfile);
-                            } else {
-                                Glide.with(getApplicationContext()).load(snapshot.child("userUrl").getValue()).apply(new RequestOptions()
-                                        .override(170, 170)).into(imgProfile);
-                            }
+                        if(snapshot.getValue(User.class).getUserId() != null){
+                            if (snapshot.getValue(User.class).getUserId().equals(currentUser.getUid())){
+                                if (snapshot.child("userUrl").getValue() == null || snapshot.child("userUrl").getValue().equals("")) {
+                                    Glide.with(getApplicationContext()).load(R.mipmap.ic_launcher_round).apply(new RequestOptions()
+                                            .override(170, 170)).into(imgProfile);
+                                } else {
+                                    Glide.with(getApplicationContext()).load(snapshot.child("userUrl").getValue()).apply(new RequestOptions()
+                                            .override(170, 170)).into(imgProfile);
+                                }
 
-                            String email = snapshot.child("email").getValue().toString();
-                            tvEmailProfileNavDrawer.setText(email);
-                            if (snapshot.child("userName").getValue() == null) {
-                                tvUserNameProfileNavDrawer.setText("Update your username");
-                            } else
-                                tvUserNameProfileNavDrawer.setText(snapshot.child("userName").getValue().toString());
+                                String email = snapshot.child("email").getValue().toString();
+                                tvEmailProfileNavDrawer.setText(email);
+                                if (snapshot.child("userName").getValue() == null || snapshot.child("userName").getValue().equals("")) {
+                                    tvUserNameProfileNavDrawer.setText("Update your username");
+                                } else
+                                    tvUserNameProfileNavDrawer.setText(snapshot.child("userName").getValue().toString());
                             }
+                        }
+
                         }
 
                     adapter = new petListNavDerAdapter(pets, images, getApplicationContext());
