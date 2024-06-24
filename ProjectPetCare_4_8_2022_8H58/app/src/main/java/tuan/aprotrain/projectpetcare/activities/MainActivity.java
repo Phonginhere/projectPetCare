@@ -547,7 +547,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                        if(snapshot.getValue(User.class).getUserId() != null){
+                        if(snapshot.getValue(User.class).getUserId() != null && currentUser != null){
                             if (snapshot.getValue(User.class).getUserId().equals(currentUser.getUid())){
                                 if (snapshot.child("userUrl").getValue() == null || snapshot.child("userUrl").getValue().equals("")) {
                                     Glide.with(getApplicationContext()).load(R.mipmap.ic_launcher_round).apply(new RequestOptions()

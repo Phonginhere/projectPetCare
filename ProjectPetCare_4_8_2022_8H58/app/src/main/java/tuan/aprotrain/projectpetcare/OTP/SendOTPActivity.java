@@ -61,39 +61,39 @@ public class SendOTPActivity extends AppCompatActivity {
                 processBar.setVisibility(View.VISIBLE);
                 btnGetOtp.setVisibility(View.INVISIBLE);
 
-                    PhoneAuthOptions options =
-                            PhoneAuthOptions.newBuilder(mAuth)
-                                    .setPhoneNumber("+84" + inputPhone.getText().toString())       // Phone number to verify
-                                    .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                                    .setActivity(SendOTPActivity.this)                 // Activity (for callback binding)
-                                    .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-                                        public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                                            processBar.setVisibility(View.GONE);
-                                            btnGetOtp.setVisibility(View.INVISIBLE);
-                                            Intent intent = new Intent(getApplicationContext(), VerifyOTPActivity.class);
-                                            intent.putExtra("mobile", inputPhone.getText().toString());
+                PhoneAuthOptions options =
+                        PhoneAuthOptions.newBuilder(mAuth)
+                                .setPhoneNumber("+84" + inputPhone.getText().toString())       // Phone number to verify
+                                .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                                .setActivity(SendOTPActivity.this)                 // Activity (for callback binding)
+                                .setCallbacks(new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+                                    public void onCodeSent(@NonNull String verificationId, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                                        processBar.setVisibility(View.GONE);
+                                        btnGetOtp.setVisibility(View.INVISIBLE);
+                                        Intent intent = new Intent(getApplicationContext(), VerifyOTPActivity.class);
+                                        intent.putExtra("mobile", inputPhone.getText().toString());
 
-                                            intent.putExtra("verificationId", verificationId);
+                                        intent.putExtra("verificationId", verificationId);
 
-                                            startActivity(intent);
-                                        }
+                                        startActivity(intent);
+                                    }
 
-                                        @Override
-                                        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                                            processBar.setVisibility(View.GONE);
-                                            btnGetOtp.setVisibility(View.INVISIBLE);
-                                        }
+                                    @Override
+                                    public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                                        processBar.setVisibility(View.GONE);
+                                        btnGetOtp.setVisibility(View.INVISIBLE);
+                                    }
 
-                                        @Override
-                                        public void onVerificationFailed(@NonNull FirebaseException e) {
-                                            processBar.setVisibility(View.GONE);
-                                            btnGetOtp.setVisibility(View.VISIBLE);
-                                            Toast.makeText(SendOTPActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                                            System.out.println("Error: " + e.getMessage());
-                                        }
-                                    })          // OnVerificationStateChangedCallbacks
-                                    .build();
-                    PhoneAuthProvider.verifyPhoneNumber(options);
+                                    @Override
+                                    public void onVerificationFailed(@NonNull FirebaseException e) {
+                                        processBar.setVisibility(View.GONE);
+                                        btnGetOtp.setVisibility(View.VISIBLE);
+                                        Toast.makeText(SendOTPActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                                        System.out.println("Error: " + e.getMessage());
+                                    }
+                                })          // OnVerificationStateChangedCallbacks
+                                .build();
+                PhoneAuthProvider.verifyPhoneNumber(options);
 //                }
 
             }
