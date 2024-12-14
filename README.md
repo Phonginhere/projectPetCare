@@ -1,4 +1,4 @@
-# projectPetCare
+# projectPetCare image demonstrate [Here](https://github.com/Phonginhere/projectPetCare/wiki/Demonstrate#pet-info--edit--add)
 This is the updated version for 2023 (originally we made it between July and August 2022)
 # Team-mate
 @tuankun-279, @KiwiLifeIsGood, @LeQuangKien, Nhi Bui (You can find them at GitHub, "@" means that they have their account)
